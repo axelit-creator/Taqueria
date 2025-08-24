@@ -9,4 +9,5 @@ workflows:
       - echo "No build step needed"
       - npx cap sync ios
     artifacts:
-      - ios/App/build/*.ipa
+  - ios/App/build/Release-iphoneos/*.ipa
+
