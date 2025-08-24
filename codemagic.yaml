@@ -1,0 +1,11 @@
+workflows:
+  ios-build:
+    name: Build iOS App
+    environment:
+      node: 18.16.0
+    scripts:
+      - npm install
+      - npm run build
+      - npx cap sync ios
+    artifacts:
+      - ios/App/build/*.ipa
