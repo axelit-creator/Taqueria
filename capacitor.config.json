@@ -1,5 +1,8 @@
 {
-  "webDir": "www",
   "appId": "com.tacos.pos",
-  "appName": "taco-pos"
+  "appName": "taco-pos",
+  "webDir": "www",
+  "ios": {
+    "path": "ios"
+  }
 }
