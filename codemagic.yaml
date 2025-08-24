@@ -2,7 +2,7 @@ workflows:
   ios-build:
     name: Build iOS App
     environment:
-      node: 18.16.0
+      node: 20.10.0  # o cualquier versión >= 20
     scripts:
       - npm install
       - npm install -g @capacitor/cli
