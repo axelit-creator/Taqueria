@@ -2,12 +2,11 @@ workflows:
   ios-build:
     name: Build iOS App
     environment:
-      node: 20.10.0  # o cualquier versión >= 20
+      node: 20.10.0
     scripts:
       - npm install
       - npm install -g @capacitor/cli
       - echo "No build step needed"
       - npx cap sync ios
     artifacts:
-  - ios/App/build/Release-iphoneos/*.ipa
-
+      - ios/App/build/Release-iphoneos/*.ipa
