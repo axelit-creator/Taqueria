@@ -3,10 +3,13 @@ workflows:
     name: Build iOS App
     environment:
       node: 20.10.0
+      xcode: latest
     scripts:
       - npm install
       - npm install -g @capacitor/cli
-      - echo "No build step needed"
       - npx cap sync ios
+      - cd ios/App
+      - xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -sdk iphoneos -archivePath build/App.xcarchive archive CODE_SIGNING_ALLOWED=NO
+      - xcodebuild -exportArchive -archivePath build/App.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath build/Release-iphoneos
     artifacts:
       - ios/App/build/Release-iphoneos/*.ipa
