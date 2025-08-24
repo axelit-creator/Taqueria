@@ -5,7 +5,7 @@ workflows:
       node: 18.16.0
     scripts:
       - npm install
-      - npm run build
-      - npx cap sync ios
+      - echo "No build step needed"
+      - node_modules/.bin/cap sync ios
     artifacts:
       - ios/App/build/*.ipa
